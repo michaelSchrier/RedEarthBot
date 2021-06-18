@@ -34,14 +34,14 @@ namespace RedEarthBot
             characters = newCharacters;
         }
 
-        public static Character CreateTessa()
+        static Character CreateTessa()
         {
             var moveURL = "http://gsx2json.com/api?id=1WPdOmlmGeN7VU5qxJfdZECHOnGPfBLS0d_HwTfGD9bU&sheet=1";
             var faceURL = "https://wiki.gbl.gg/images/b/b8/RE_Tessa.PNG";
             return new Character(CharName.Tessa, LoadMoves(moveURL), GetCharacterCodes(CharName.Tessa), DiscordColor.Purple, faceURL);
         }
 
-        public static Character CreateLeo()
+        static Character CreateLeo()
         {
             var moveURL = "http://gsx2json.com/api?id=1WPdOmlmGeN7VU5qxJfdZECHOnGPfBLS0d_HwTfGD9bU&sheet=2";
             var faceURL = "https://wiki.gbl.gg/images/a/a2/RE_Leo.PNG";
@@ -49,7 +49,7 @@ namespace RedEarthBot
             return new Character(CharName.Leo, LoadMoves(moveURL), GetCharacterCodes(CharName.Leo), DiscordColor.Orange, faceURL);
         }
 
-        public static Character CreateMai()
+        static Character CreateMai()
         {
             var moveURL = "http://gsx2json.com/api?id=1WPdOmlmGeN7VU5qxJfdZECHOnGPfBLS0d_HwTfGD9bU&sheet=3";
             var faceURL = "https://wiki.gbl.gg/images/f/f2/RE_Mai_Ling.PNG";
@@ -57,7 +57,7 @@ namespace RedEarthBot
             return new Character(CharName.MaiLing, LoadMoves(moveURL), GetCharacterCodes(CharName.MaiLing), DiscordColor.Red, faceURL);;
         }
 
-        public static Character CreateKenji()
+        static Character CreateKenji()
         {
             var moveURL = "http://gsx2json.com/api?id=1WPdOmlmGeN7VU5qxJfdZECHOnGPfBLS0d_HwTfGD9bU&sheet=4";
             var faceURL = "https://wiki.gbl.gg/images/7/78/RE_Kenji.PNG";
@@ -65,7 +65,7 @@ namespace RedEarthBot
             return new Character(CharName.Kenji, LoadMoves(moveURL), GetCharacterCodes(CharName.Kenji), DiscordColor.Blue, faceURL);
         }
 
-        private static Dictionary<string, MoveData> LoadMoves(string url)
+        static Dictionary<string, MoveData> LoadMoves(string url)
         {
             using WebClient wc = new WebClient();
             var moveJson = wc.DownloadString(url);
@@ -105,7 +105,7 @@ namespace RedEarthBot
             return searchResults;
         }
 
-        public static List<CodeData> LoadCodes()
+        static List<CodeData> LoadCodes()
         {
             using WebClient wc = new WebClient();
             var moveJson = wc.DownloadString("http://gsx2json.com/api?id=1WPdOmlmGeN7VU5qxJfdZECHOnGPfBLS0d_HwTfGD9bU&sheet=5");
